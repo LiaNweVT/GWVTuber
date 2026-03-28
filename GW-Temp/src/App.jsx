@@ -8,7 +8,7 @@ import "./styles/banner.css"
 import "./styles/cards.css"
 import "./styles/modals.css"
 
-const characterImages = import.meta.glob('./assets/characters/*.{png,jpg,jpeg,webp}', { eager: true })
+const characterImages = import.meta.glob('./assets/characters/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG,WEBP}', { eager: true })
 
 // ── SVG Icons ──────────────────────────────────────────────────────────────
 
@@ -78,7 +78,7 @@ const HOW_TO = [
 
 export default function App() {   
   const characters = Object.keys(characterImages).map((path) => {
-    const str = path.split('/').pop().replace(/\.(png|jpg|jpeg|webp)$/i, '')
+    const str = path.split('/').pop().replace(/\.(png|jpg|jpeg|webp|PNG|JPG|JPEG|WEBP)$/i, '')
     const parts = str.split('||');
     const name = parts[0];
     const artist = "Artist: " + (parts[1] || '---');
